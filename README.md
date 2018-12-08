@@ -36,4 +36,7 @@ On the outlet side, valves can be turned on to pressurize the channels.
 
 
 
+Current State:
+The system is functional but very messy.
+There is also a significant voltage drop that occurs when solenoids are engaged. With 0 on, there is 5.25V, with all on ~4.7V. This is causing issues for solenoid activation. The solution will be to improve the power lines. This could be achieved by adding more in parrallel or just creating thicker power lines (not sure).
 
