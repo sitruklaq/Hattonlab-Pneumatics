@@ -35,6 +35,7 @@ On the outlet side, valves can be turned on to pressurize the channels.
 
 
 
+This system is designed to be controlled with a computer interface through serial communication (Labview/ simple GUI etc.). More modules can be added to create a fully integrated system.
 
 Current State:
 The system is functional but very messy.
