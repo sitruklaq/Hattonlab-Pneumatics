@@ -160,10 +160,10 @@
 <packages>
 <package name="VALVTEST2">
 <rectangle x1="-13.97" y1="-7.62" x2="30.226" y2="7.62" layer="21"/>
-<pad name="PAD10" x="-10.1346" y="6.7564" drill="0.8001"/>
-<pad name="PAD11" x="-10.1346" y="-6.7056" drill="0.8001"/>
-<pad name="PAD12" x="9.9314" y="-6.7056" drill="0.8001"/>
-<pad name="PAD13" x="9.9314" y="6.7564" drill="0.8001"/>
+<pad name="PAD10" x="-10.1346" y="6.7564" drill="0.9652" diameter="1.778"/>
+<pad name="PAD11" x="-10.1346" y="-6.7056" drill="0.9652" diameter="1.778"/>
+<pad name="PAD12" x="9.9314" y="-6.7056" drill="0.9652" diameter="1.778"/>
+<pad name="PAD13" x="9.9314" y="6.7564" drill="0.9652" diameter="1.778"/>
 </package>
 </packages>
 <symbols>
