@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="12.5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="1" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -165,6 +165,8 @@
 <hole x="23.1775" y="27.94" drill="3.175"/>
 <hole x="22.86" y="2.54" drill="3.175"/>
 <hole x="2.54" y="2.54" drill="3.175"/>
+<hole x="6.3246" y="36.2712" drill="0.9652"/>
+<hole x="19.7866" y="36.2966" drill="0.9652"/>
 </plain>
 <libraries>
 <library name="adafruit" urn="urn:adsk.eagle:library:420">
@@ -333,10 +335,10 @@ grid 5.08 mm</description>
 <packages>
 <package name="VALVTEST2">
 <rectangle x1="-13.97" y1="-7.62" x2="30.226" y2="7.62" layer="21"/>
-<pad name="PAD10" x="-10.1346" y="6.7564" drill="0.8001"/>
-<pad name="PAD11" x="-10.1346" y="-6.7056" drill="0.8001"/>
-<pad name="PAD12" x="9.9314" y="-6.7056" drill="0.8001"/>
-<pad name="PAD13" x="9.9314" y="6.7564" drill="0.8001"/>
+<pad name="PAD10" x="-10.1346" y="6.7564" drill="0.9652" diameter="1.778"/>
+<pad name="PAD11" x="-10.1346" y="-6.7056" drill="0.9652" diameter="1.778"/>
+<pad name="PAD12" x="9.9314" y="-6.7056" drill="0.9652" diameter="1.778"/>
+<pad name="PAD13" x="9.9314" y="6.7564" drill="0.9652" diameter="1.778"/>
 </package>
 </packages>
 </library>
