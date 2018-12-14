@@ -155,7 +155,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <board>
-<fusionsync huburn="a.cGVyc29uYWw6dWUyYWM0Yzdl" projecturn="a.cGVyc29uYWw6dWUyYWM0YzdlIzIwMTgxMjA3MTY0NDE3NzU2" f3durn="urn:adsk.wipprod:dm.lineage:Ckdqxfa8RWO7gMxvI3SWJw" pcbguid="cf871d59-5326-4fd8-b094-b680d0f744d5" lastpulledtime="" lastsyncedchangeguid="3389f75c-7e19-a494-e700-5a38b7b5ce34"/>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyYWM0Yzdl" projecturn="a.cGVyc29uYWw6dWUyYWM0YzdlIzIwMTgxMjA3MTY0NDE3NzU2" f3durn="urn:adsk.wipprod:dm.lineage:Ckdqxfa8RWO7gMxvI3SWJw" pcbguid="cf871d59-5326-4fd8-b094-b680d0f744d5" lastpulledtime="" lastsyncedchangeguid="c93bf3f4-3613-e115-6375-5f6b88c2930e"/>
 <plain>
 <wire x1="0" y1="0" x2="25.38" y2="0" width="0" layer="20"/>
 <wire x1="25.38" y1="0" x2="25.38" y2="38.0875" width="0" layer="20"/>
@@ -543,7 +543,7 @@ design rules under a new name.</description>
 <attribute name="NAME" x="16.5862" y="0.0762" size="1.27" layer="25" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="16.51" y="5.08" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="LED1" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="LED5MM" package3d_urn="urn:adsk.eagle:package:6240538/1" value="" x="8.5725" y="7.3025" smashed="yes" rot="R270">
+<element name="LED1" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="LED5MM" package3d_urn="urn:adsk.eagle:package:6240538/1" value="2.2V 8mA" x="8.5725" y="7.3025" smashed="yes" rot="R270">
 <attribute name="NAME" x="9.1059" y="4.1275" size="1.27" layer="25" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="6.7691" y="4.1021" size="1.27" layer="27" ratio="10" rot="R270"/>
 </element>
@@ -551,7 +551,7 @@ design rules under a new name.</description>
 <attribute name="NAME" x="0.67725625" y="8.392709375" size="1.27" layer="25" ratio="10" rot="R89.6"/>
 <attribute name="VALUE" x="2.8417" y="9.165015625" size="1.27" layer="27" ratio="10" rot="R89.6"/>
 </element>
-<element name="T1" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="TO92-EBC-OVAL" package3d_urn="urn:adsk.eagle:package:6240647/1" value="2N2222" x="15.24" y="7.3025" smashed="yes" rot="R90">
+<element name="SS8050" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="TO92-EBC-OVAL" package3d_urn="urn:adsk.eagle:package:6240647/1" value="2N2222" x="15.24" y="7.3025" smashed="yes" rot="R90">
 <attribute name="NAME" x="13.462" y="4.7625" size="1.27" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="19.812" y="4.7625" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
@@ -559,7 +559,7 @@ design rules under a new name.</description>
 </elements>
 <signals>
 <signal name="N$1">
-<contactref element="T1" pad="C"/>
+<contactref element="SS8050" pad="C"/>
 <contactref element="SOLENOID1" pad="PAD11"/>
 <contactref element="D1" pad="A"/>
 <wire x1="16.51" y1="9.8425" x2="16.02621875" y2="9.8425" width="0.254" layer="1"/>
@@ -575,7 +575,7 @@ design rules under a new name.</description>
 <wire x1="10.16" y1="1.905" x2="2.187034375" y2="6.350121875" width="0.254" layer="1"/>
 </signal>
 <signal name="GND">
-<contactref element="T1" pad="E"/>
+<contactref element="SS8050" pad="E"/>
 <contactref element="PINHEADER" pad="2"/>
 <wire x1="12.7" y1="1.905" x2="15.5575" y2="4.7625" width="0.254" layer="1" curve="-90"/>
 <wire x1="15.5575" y1="4.7625" x2="16.51" y2="4.7625" width="0.254" layer="1"/>
@@ -597,7 +597,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$2">
 <contactref element="LED1" pad="K"/>
-<contactref element="T1" pad="B"/>
+<contactref element="SS8050" pad="B"/>
 <wire x1="8.5725" y1="6.0325" x2="16.51" y2="7.3025" width="0.254" layer="1"/>
 </signal>
 </signals>

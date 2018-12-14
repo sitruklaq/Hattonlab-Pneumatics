@@ -3,7 +3,7 @@
 <eagle version="9.2.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="1" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -155,7 +155,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <board>
-<fusionsync huburn="a.cGVyc29uYWw6dWUyYWM0Yzdl" projecturn="a.cGVyc29uYWw6dWUyYWM0YzdlIzIwMTgxMjA3MTY0NDE3NzU2" f3durn="urn:adsk.wipprod:dm.lineage:Ckdqxfa8RWO7gMxvI3SWJw" pcbguid="cf871d59-5326-4fd8-b094-b680d0f744d5" lastpulledtime="" lastsyncedchangeguid="3389f75c-7e19-a494-e700-5a38b7b5ce34"/>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyYWM0Yzdl" projecturn="a.cGVyc29uYWw6dWUyYWM0YzdlIzIwMTgxMjA3MTY0NDE3NzU2" f3durn="urn:adsk.wipprod:dm.lineage:Ckdqxfa8RWO7gMxvI3SWJw" pcbguid="cf871d59-5326-4fd8-b094-b680d0f744d5" lastpulledtime="" lastsyncedchangeguid="c93bf3f4-3613-e115-6375-5f6b88c2930e"/>
 <plain>
 <wire x1="0" y1="0" x2="25.38" y2="0" width="0" layer="20"/>
 <wire x1="25.38" y1="0" x2="25.38" y2="38.0875" width="0" layer="20"/>
@@ -579,8 +579,6 @@ design rules under a new name.</description>
 <contactref element="PINHEADER" pad="2"/>
 <wire x1="12.7" y1="1.905" x2="15.5575" y2="4.7625" width="0.254" layer="1" curve="-90"/>
 <wire x1="15.5575" y1="4.7625" x2="16.51" y2="4.7625" width="0.254" layer="1"/>
-<contactref element="LED1" pad="K"/>
-<wire x1="12.7" y1="1.905" x2="8.5725" y2="6.0325" width="0.254" layer="1"/>
 </signal>
 <signal name="5V">
 <contactref element="D1" pad="C"/>
@@ -592,14 +590,15 @@ design rules under a new name.</description>
 <wire x1="19.685" y1="8.89" x2="19.685" y2="16.4465" width="0.254" layer="1"/>
 <wire x1="19.685" y1="16.4465" x2="19.7739" y2="16.5354" width="0.254" layer="1" curve="-90"/>
 </signal>
-<signal name="N$2">
-<contactref element="LED1" pad="A"/>
+<signal name="N$3">
 <contactref element="R1" pad="2"/>
+<contactref element="LED1" pad="A"/>
+<wire x1="2.2579625" y1="16.509875" x2="8.5725" y2="8.5725" width="0.254" layer="1"/>
+</signal>
+<signal name="N$2">
+<contactref element="LED1" pad="K"/>
 <contactref element="T1" pad="B"/>
-<wire x1="2.07686875" y1="12.52813125" x2="8.5725" y2="8.5725" width="0.254" layer="1"/>
-<wire x1="2.07686875" y1="12.52813125" x2="2.2579625" y2="16.509875" width="0.254" layer="1"/>
-<wire x1="8.5725" y1="8.5725" x2="9.8425" y2="7.3025" width="0.254" layer="1"/>
-<wire x1="9.8425" y1="7.3025" x2="16.51" y2="7.3025" width="0.254" layer="1"/>
+<wire x1="8.5725" y1="6.0325" x2="16.51" y2="7.3025" width="0.254" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

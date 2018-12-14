@@ -3,10 +3,10 @@
 <eagle version="9.2.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="yes"/>
+<setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="12.5" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="1" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -165,6 +165,8 @@
 <hole x="23.1775" y="27.94" drill="3.175"/>
 <hole x="22.86" y="2.54" drill="3.175"/>
 <hole x="2.54" y="2.54" drill="3.175"/>
+<hole x="6.3246" y="36.2712" drill="0.9652"/>
+<hole x="19.7866" y="36.2966" drill="0.9652"/>
 </plain>
 <libraries>
 <library name="adafruit" urn="urn:adsk.eagle:library:420">
@@ -333,10 +335,10 @@ grid 5.08 mm</description>
 <packages>
 <package name="VALVTEST2">
 <rectangle x1="-13.97" y1="-7.62" x2="30.226" y2="7.62" layer="21"/>
-<pad name="PAD10" x="-10.1346" y="6.7564" drill="0.8001"/>
-<pad name="PAD11" x="-10.1346" y="-6.7056" drill="0.8001"/>
-<pad name="PAD12" x="9.9314" y="-6.7056" drill="0.8001"/>
-<pad name="PAD13" x="9.9314" y="6.7564" drill="0.8001"/>
+<pad name="PAD10" x="-10.1346" y="6.7564" drill="0.9652" diameter="1.778"/>
+<pad name="PAD11" x="-10.1346" y="-6.7056" drill="0.9652" diameter="1.778"/>
+<pad name="PAD12" x="9.9314" y="-6.7056" drill="0.9652" diameter="1.778"/>
+<pad name="PAD13" x="9.9314" y="6.7564" drill="0.9652" diameter="1.778"/>
 </package>
 </packages>
 </library>
@@ -537,15 +539,15 @@ design rules under a new name.</description>
 <attribute name="NAME" x="21.209" y="9.398" size="1.27" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="25.654" y="9.398" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
-<element name="JP1" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="1X03" package3d_urn="urn:adsk.eagle:package:6240710/1" value="" x="12.7" y="1.905" smashed="yes" rot="R180">
+<element name="PINHEADER" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="1X03" package3d_urn="urn:adsk.eagle:package:6240710/1" value="" x="12.7" y="1.905" smashed="yes" rot="R180">
 <attribute name="NAME" x="16.5862" y="0.0762" size="1.27" layer="25" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="16.51" y="5.08" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="LED1" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="LED5MM" package3d_urn="urn:adsk.eagle:package:6240538/1" value="" x="8.5725" y="7.3025" smashed="yes">
-<attribute name="NAME" x="11.7475" y="7.8359" size="1.27" layer="25" ratio="10"/>
-<attribute name="VALUE" x="11.7729" y="5.4991" size="1.27" layer="27" ratio="10"/>
+<element name="LED1" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="LED5MM" package3d_urn="urn:adsk.eagle:package:6240538/1" value="" x="8.5725" y="7.3025" smashed="yes" rot="R270">
+<attribute name="NAME" x="9.1059" y="4.1275" size="1.27" layer="25" ratio="10" rot="R270"/>
+<attribute name="VALUE" x="6.7691" y="4.1021" size="1.27" layer="27" ratio="10" rot="R270"/>
 </element>
-<element name="R1" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="0207/10" package3d_urn="urn:adsk.eagle:package:6240597/1" value="" x="2.2225" y="11.43" smashed="yes" rot="R89.6">
+<element name="R1" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="0207/10" package3d_urn="urn:adsk.eagle:package:6240597/1" value="220" x="2.2225" y="11.43" smashed="yes" rot="R89.6">
 <attribute name="NAME" x="0.67725625" y="8.392709375" size="1.27" layer="25" ratio="10" rot="R89.6"/>
 <attribute name="VALUE" x="2.8417" y="9.165015625" size="1.27" layer="27" ratio="10" rot="R89.6"/>
 </element>
@@ -553,12 +555,12 @@ design rules under a new name.</description>
 <attribute name="NAME" x="13.462" y="4.7625" size="1.27" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="19.812" y="4.7625" size="1.27" layer="27" ratio="10" rot="R90"/>
 </element>
-<element name="U$1" library="local eagle library" package="VALVTEST2" value="" x="13.0175" y="26.3525" smashed="yes" rot="MR90"/>
+<element name="SOLENOID1" library="local eagle library" package="VALVTEST2" value="SOLENOID1" x="13.0175" y="26.3525" smashed="yes" rot="MR90"/>
 </elements>
 <signals>
 <signal name="N$1">
 <contactref element="T1" pad="C"/>
-<contactref element="U$1" pad="PAD11"/>
+<contactref element="SOLENOID1" pad="PAD11"/>
 <contactref element="D1" pad="A"/>
 <wire x1="16.51" y1="9.8425" x2="16.02621875" y2="9.8425" width="0.254" layer="1"/>
 <wire x1="16.02621875" y1="9.8425" x2="6.3119" y2="16.2179" width="0.254" layer="1"/>
@@ -567,37 +569,37 @@ design rules under a new name.</description>
 <wire x1="21.2725" y1="20.32" x2="22.86" y2="18.7325" width="0.254" layer="1" curve="-90"/>
 <wire x1="22.86" y1="18.7325" x2="22.86" y2="16.51" width="0.254" layer="1"/>
 </signal>
-<signal name="N$2">
-<contactref element="T1" pad="B"/>
-<contactref element="LED1" pad="K"/>
-<wire x1="9.8425" y1="7.3025" x2="16.51" y2="7.3025" width="0.254" layer="1"/>
-</signal>
-<signal name="N$3">
-<contactref element="LED1" pad="A"/>
-<contactref element="R1" pad="2"/>
-<wire x1="2.07686875" y1="12.52813125" x2="7.3025" y2="7.3025" width="0.254" layer="1"/>
-<wire x1="2.07686875" y1="12.52813125" x2="2.2579625" y2="16.509875" width="0.254" layer="1"/>
-</signal>
-<signal name="VALVEGPIO1">
+<signal name="CNTRLSIG1">
 <contactref element="R1" pad="1"/>
-<contactref element="JP1" pad="3"/>
+<contactref element="PINHEADER" pad="3"/>
 <wire x1="10.16" y1="1.905" x2="2.187034375" y2="6.350121875" width="0.254" layer="1"/>
 </signal>
 <signal name="GND">
 <contactref element="T1" pad="E"/>
-<contactref element="JP1" pad="2"/>
+<contactref element="PINHEADER" pad="2"/>
 <wire x1="12.7" y1="1.905" x2="15.5575" y2="4.7625" width="0.254" layer="1" curve="-90"/>
 <wire x1="15.5575" y1="4.7625" x2="16.51" y2="4.7625" width="0.254" layer="1"/>
+<contactref element="LED1" pad="K"/>
+<wire x1="12.7" y1="1.905" x2="8.5725" y2="6.0325" width="0.254" layer="1"/>
 </signal>
 <signal name="5V">
 <contactref element="D1" pad="C"/>
-<contactref element="U$1" pad="PAD10"/>
-<contactref element="JP1" pad="1"/>
+<contactref element="SOLENOID1" pad="PAD10"/>
+<contactref element="PINHEADER" pad="1"/>
 <wire x1="22.86" y1="6.35" x2="15.24" y2="1.905" width="0.254" layer="1"/>
 <wire x1="22.86" y1="6.35" x2="22.225" y2="6.35" width="0.254" layer="1"/>
 <wire x1="22.225" y1="6.35" x2="19.685" y2="8.89" width="0.254" layer="1" curve="-90"/>
 <wire x1="19.685" y1="8.89" x2="19.685" y2="16.4465" width="0.254" layer="1"/>
 <wire x1="19.685" y1="16.4465" x2="19.7739" y2="16.5354" width="0.254" layer="1" curve="-90"/>
+</signal>
+<signal name="N$2">
+<contactref element="LED1" pad="A"/>
+<contactref element="R1" pad="2"/>
+<contactref element="T1" pad="B"/>
+<wire x1="2.07686875" y1="12.52813125" x2="8.5725" y2="8.5725" width="0.254" layer="1"/>
+<wire x1="2.07686875" y1="12.52813125" x2="2.2579625" y2="16.509875" width="0.254" layer="1"/>
+<wire x1="8.5725" y1="8.5725" x2="9.8425" y2="7.3025" width="0.254" layer="1"/>
+<wire x1="9.8425" y1="7.3025" x2="16.51" y2="7.3025" width="0.254" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
