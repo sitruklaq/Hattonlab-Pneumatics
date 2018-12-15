@@ -187,12 +187,12 @@
 <wire x1="3.6" y1="3.5" x2="-3.6" y2="3.5" width="0.12" layer="52"/>
 <wire x1="-3.6" y1="3.5" x2="-3.6" y2="-3.5" width="0.12" layer="52"/>
 <wire x1="-3.6" y1="-3.5" x2="3.6" y2="-3.5" width="0.12" layer="52"/>
-<pad name="1" x="-2.54" y="3.75" drill="0.786" diameter="1.386" rot="R270"/>
-<pad name="2" x="0" y="3.75" drill="0.786" diameter="1.386" rot="R270"/>
-<pad name="3" x="2.54" y="3.75" drill="0.786" diameter="1.386" rot="R270"/>
-<pad name="4" x="2.54" y="-3.75" drill="0.786" diameter="1.386" rot="R270"/>
-<pad name="5" x="0" y="-3.75" drill="0.786" diameter="1.386" rot="R270"/>
-<pad name="6" x="-2.54" y="-3.75" drill="0.786" diameter="1.386" rot="R270"/>
+<pad name="1" x="-2.54" y="3.75" drill="0.79375" diameter="1.397" rot="R270"/>
+<pad name="2" x="0" y="3.75" drill="0.79375" diameter="1.397" rot="R270"/>
+<pad name="3" x="2.54" y="3.75" drill="0.79375" diameter="1.397" rot="R270"/>
+<pad name="4" x="2.54" y="-3.75" drill="0.79375" diameter="1.397" rot="R270"/>
+<pad name="5" x="0" y="-3.75" drill="0.79375" diameter="1.397" rot="R270"/>
+<pad name="6" x="-2.54" y="-3.75" drill="0.79375" diameter="1.397" rot="R270"/>
 <text x="-0.425" y="7.62" size="1.27" layer="25" rot="R180" align="bottom-center">ADP5101</text>
 <text x="4.235" y="0" size="1.27" layer="28" rot="MR161.5" align="top-center"> </text>
 <rectangle x1="1.27" y1="-1.27" x2="3.81" y2="1.27" layer="22" rot="R270"/>
