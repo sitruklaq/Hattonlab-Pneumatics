@@ -173,7 +173,7 @@
 <hole x="123.952" y="98.425" drill="3.175"/>
 <hole x="63.627" y="98.425" drill="3.175"/>
 <hole x="62.992" y="3.175" drill="3.175"/>
-<text x="46.99" y="80.772" size="2.54" layer="1" distance="81" rot="SR270">Valve 1</text>
+<text x="46.99" y="80.772" size="2.54" layer="1" font="vector" distance="81" rot="SR270">Valve 1</text>
 </plain>
 <libraries>
 <library name="adafruit" urn="urn:adsk.eagle:library:420">
