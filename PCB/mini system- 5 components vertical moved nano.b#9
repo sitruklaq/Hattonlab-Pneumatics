@@ -173,6 +173,12 @@
 <hole x="123.952" y="98.425" drill="3.175"/>
 <hole x="63.627" y="98.425" drill="3.175"/>
 <hole x="62.992" y="3.175" drill="3.175"/>
+<hole x="14.097" y="93.599" drill="3.048"/>
+<hole x="9.398" y="90.551" drill="3.048"/>
+<hole x="14.097" y="87.63" drill="3.048"/>
+<circle x="9.398" y="90.551" radius="1.905" width="1.016" layer="16"/>
+<circle x="14.097" y="87.503" radius="2.032" width="1.016" layer="16"/>
+<circle x="14.097" y="93.472" radius="1.905" width="1.016" layer="16"/>
 </plain>
 <libraries>
 <library name="adafruit" urn="urn:adsk.eagle:library:420">
@@ -1981,7 +1987,7 @@ design rules under a new name.</description>
 <element name="U$2" library="local eagle library" package="VALVTEST2" value="" x="1.016" y="34.29" smashed="yes"/>
 <element name="PUMP1" library="local eagle library" package="PUMP" value="DCPUMP" x="73.152" y="65.532" smashed="yes" rot="MR270"/>
 <element name="U$4" library="local eagle library" package="PUMP" value="DCPUMP" x="73.025" y="36.068" smashed="yes" rot="R90"/>
-<element name="BARREL" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="PJ-102A" package3d_urn="urn:adsk.eagle:package:6240341/1" value="2.1MMJACKTHM" x="13.97" y="96.901" smashed="yes" rot="MR0"/>
+<element name="BARREL" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="PJ-102A" package3d_urn="urn:adsk.eagle:package:6240341/1" value="2.1MMJACKTHM" x="13.97" y="96.901" smashed="yes"/>
 <element name="U$3" library="local eagle library" package="VALVTEST2" value="" x="1.016" y="58.42" smashed="yes"/>
 <element name="U$6" library="local eagle library" package="VALVTEST2" value="" x="1.016" y="82.55" smashed="yes"/>
 <element name="D4" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="DO41-10" package3d_urn="urn:adsk.eagle:package:6240344/1" value="1N4004" x="13.462" y="40.894" smashed="yes">
@@ -2159,10 +2165,8 @@ design rules under a new name.</description>
 <wire x1="76.454" y1="90.17" x2="80.518" y2="89.408" width="0.381" layer="16"/>
 <wire x1="80.4651375" y1="89.3551375" x2="80.518" y2="89.408" width="0.381" layer="1"/>
 <wire x1="32.385" y1="87.503" x2="32.385" y2="85.979" width="0.381" layer="16"/>
-<wire x1="13.87" y1="87.611" x2="14.178" y2="87.503" width="0.762" layer="1" curve="-90"/>
-<wire x1="14.178" y1="87.503" x2="27.051" y2="87.503" width="0.762" layer="16"/>
 <wire x1="80.264" y1="84.1375" x2="80.4651375" y2="89.3551375" width="0" layer="19" extent="1-16"/>
-<via x="14.178" y="87.503" extent="1-16" drill="1.143"/>
+<wire x1="14.07" y1="87.611" x2="4.8514" y2="81.6864" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$8">
 <contactref element="T1" pad="C"/>
@@ -2252,7 +2256,6 @@ design rules under a new name.</description>
 <wire x1="94.869" y1="34.671" x2="102.8065" y2="34.671" width="0.762" layer="16"/>
 <wire x1="94.869" y1="26.543" x2="94.869" y2="26.67" width="0.762" layer="16"/>
 <wire x1="94.869" y1="26.67" x2="102.8065" y2="26.67" width="0.762" layer="16"/>
-<wire x1="14.109" y1="93.472" x2="27.051" y2="93.472" width="0.762" layer="16"/>
 <wire x1="27.051" y1="93.472" x2="32.385" y2="93.472" width="0.762" layer="16"/>
 <wire x1="32.385" y1="93.472" x2="72.263" y2="93.472" width="0.762" layer="16"/>
 <wire x1="27.051" y1="93.472" x2="27.051" y2="90.043" width="0.762" layer="16"/>
@@ -2264,9 +2267,8 @@ design rules under a new name.</description>
 <wire x1="92.329" y1="85.979" x2="92.329" y2="78.105" width="0.762" layer="16"/>
 <contactref element="C4" pad="-"/>
 <wire x1="32.385" y1="90.043" x2="32.385" y2="93.472" width="0.762" layer="16"/>
-<wire x1="13.87" y1="93.511" x2="14.109" y2="93.472" width="0.762" layer="1" curve="-90"/>
 <wire x1="91.948" y1="86.36" x2="87.249" y2="93.345" width="0" layer="19" extent="16-16"/>
-<via x="14.109" y="93.472" extent="1-16" drill="1.143"/>
+<wire x1="14.07" y1="93.511" x2="27.051" y2="93.472" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$5">
 <contactref element="T2" pad="C"/>
