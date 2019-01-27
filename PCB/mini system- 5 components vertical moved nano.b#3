@@ -3,7 +3,7 @@
 <eagle version="9.2.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="5" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -157,7 +157,7 @@
 <layer number="255" name="routoute" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <board>
-<fusionsync huburn="a.cGVyc29uYWw6dWUyYWM0Yzdl" projecturn="a.cGVyc29uYWw6dWUyYWM0YzdlIzIwMTgxMjA3MTY0NDE3NzU2" f3durn="urn:adsk.wipprod:dm.lineage:ipVbJF5-SwOsw-B3ekb76Q" pcbguid="8f44df2d-14c5-4540-8af0-b911cb55bcae" lastpulledtime="" lastsyncedchangeguid="26655fb0-fed0-5223-a9ff-41a056fd7ddd"/>
+<fusionsync huburn="a.cGVyc29uYWw6dWUyYWM0Yzdl" projecturn="a.cGVyc29uYWw6dWUyYWM0YzdlIzIwMTgxMjA3MTY0NDE3NzU2" f3durn="urn:adsk.wipprod:dm.lineage:ipVbJF5-SwOsw-B3ekb76Q" pcbguid="8f44df2d-14c5-4540-8af0-b911cb55bcae" lastpulledtime="" lastsyncedchangeguid="2c4c77b8-9d6d-2df6-53d3-28a3093c19c5"/>
 <plain>
 <wire x1="127.1145" y1="3.175" x2="127.1145" y2="97.78" width="0" layer="20"/>
 <wire x1="127.1145" y1="97.78" x2="123.9395" y2="101.59" width="0" layer="20" curve="90"/>
@@ -173,7 +173,7 @@
 <hole x="123.952" y="98.425" drill="3.175"/>
 <hole x="63.627" y="98.425" drill="3.175"/>
 <hole x="62.992" y="3.175" drill="3.175"/>
-<text x="46.99" y="80.772" size="2.54" layer="1" distance="81" rot="SR270">Valve 1</text>
+<text x="46.99" y="80.772" size="2.54" layer="1" font="vector" distance="81" rot="SR270">Valve 1</text>
 </plain>
 <libraries>
 <library name="adafruit" urn="urn:adsk.eagle:library:420">
@@ -2184,14 +2184,15 @@ design rules under a new name.</description>
 <wire x1="32.385" y1="87.503" x2="32.385" y2="87.376" width="0.762" layer="16"/>
 <via x="80.264" y="84.074" extent="1-16" drill="1.143"/>
 <wire x1="80.264" y1="84.074" x2="80.264" y2="84.1375" width="0.381" layer="16"/>
-<via x="80.518" y="89.408" extent="1-16" drill="1.143"/>
-<wire x1="76.454" y1="90.17" x2="80.518" y2="89.408" width="0.381" layer="16"/>
-<wire x1="80.4651375" y1="89.3551375" x2="80.518" y2="89.408" width="0.381" layer="1"/>
+<via x="80.264" y="89.408" extent="1-16" drill="1.143"/>
+<wire x1="80.264" y1="89.408" x2="76.512615625" y2="90.111384375" width="0.381" layer="16"/>
+<wire x1="76.454" y1="90.17" x2="76.512615625" y2="90.111384375" width="0.381" layer="16"/>
+<wire x1="80.2111375" y1="89.3551375" x2="80.264" y2="89.408" width="0.381" layer="1"/>
 <wire x1="32.385" y1="87.503" x2="32.385" y2="85.979" width="0.381" layer="16"/>
 <contactref element="J2" pad="PWR"/>
 <wire x1="27.051" y1="87.503" x2="14.18823125" y2="87.503" width="0.762" layer="16"/>
 <wire x1="14.18823125" y1="87.503" x2="13.843" y2="87.646" width="0.762" layer="16" curve="-45"/>
-<wire x1="80.264" y1="84.1375" x2="80.4651375" y2="89.3551375" width="0" layer="19" extent="1-16"/>
+<wire x1="80.264" y1="84.1375" x2="80.2111375" y2="89.3551375" width="0" layer="19" extent="1-16"/>
 </signal>
 <signal name="N$8">
 <contactref element="T1" pad="C"/>

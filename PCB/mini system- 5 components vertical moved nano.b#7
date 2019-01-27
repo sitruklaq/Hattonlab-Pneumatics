@@ -1678,6 +1678,31 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-1.27" y="1.397" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
 <text x="-1.27" y="-2.032" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
 </package>
+<package name="POWER_JACK_PTH" urn="urn:adsk.eagle:footprint:37872/1" library_version="1">
+<description>&lt;h3&gt;DC Barrel Power Jack/Connector PTH&lt;/h3&gt;
+5.5mm jack, 2.1mm center pole diameter
+&lt;p&gt;Specifications:
+&lt;ul&gt;&lt;li&gt;Pin count: 3&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=”https://www.sparkfun.com/datasheets/Prototyping/Barrel-Connector-PJ-202A.pdf”&gt;Datasheet referenced for footprint&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Example device(s):
+&lt;ul&gt;&lt;li&gt;POWER_JACK&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;</description>
+<wire x1="4.5" y1="13.7" x2="2.4" y2="13.7" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="3" x2="-4.5" y2="0.1" width="0.2032" layer="51"/>
+<wire x1="4.5" y1="0.1" x2="4.5" y2="3" width="0.2032" layer="51"/>
+<wire x1="4.5" y1="0.1" x2="-4.5" y2="0.1" width="0.2032" layer="51"/>
+<wire x1="4.5" y1="3" x2="4.5" y2="8.3" width="0.2032" layer="21"/>
+<wire x1="4.5" y1="13.7" x2="4.5" y2="13" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="3" x2="-4.5" y2="13.7" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="13.7" x2="-2.4" y2="13.7" width="0.2032" layer="21"/>
+<wire x1="-4.5" y1="3" x2="4.5" y2="3" width="0.2032" layer="21"/>
+<pad name="PWR" x="0" y="13.7" drill="2.9972" diameter="4.318"/>
+<pad name="GND" x="0" y="7.7" drill="2.9972" diameter="4.318"/>
+<pad name="GNDBREAK" x="4.7" y="10.7" drill="2.9972" diameter="4.318" rot="R90"/>
+<text x="-1.3716" y="1.8288" size="0.6096" layer="25" font="vector" ratio="20">&gt;NAME</text>
+<text x="-1.7526" y="0.8128" size="0.6096" layer="27" font="vector" ratio="20">&gt;VALUE</text>
+</package>
 </packages>
 <packages3d>
 <package3d name="1X06" urn="urn:adsk.eagle:package:38009/1" type="box" library_version="1">
@@ -1691,6 +1716,20 @@ CONN_06
 </description>
 <packageinstances>
 <packageinstance name="1X06"/>
+</packageinstances>
+</package3d>
+<package3d name="POWER_JACK_PTH" urn="urn:adsk.eagle:package:38231/1" type="box" library_version="1">
+<description>DC Barrel Power Jack/Connector PTH
+5.5mm jack, 2.1mm center pole diameter
+Specifications:
+Pin count: 3
+
+Datasheet referenced for footprint
+Example device(s):
+POWER_JACK
+</description>
+<packageinstances>
+<packageinstance name="POWER_JACK_PTH"/>
 </packageinstances>
 </package3d>
 </packages3d>
@@ -1981,7 +2020,7 @@ design rules under a new name.</description>
 <element name="U$2" library="local eagle library" package="VALVTEST2" value="" x="1.016" y="34.29" smashed="yes"/>
 <element name="PUMP1" library="local eagle library" package="PUMP" value="DCPUMP" x="73.152" y="65.532" smashed="yes" rot="MR270"/>
 <element name="U$4" library="local eagle library" package="PUMP" value="DCPUMP" x="73.025" y="36.068" smashed="yes" rot="R90"/>
-<element name="BARREL" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="PJ-102A" package3d_urn="urn:adsk.eagle:package:6240341/1" value="2.1MMJACKTHM" x="55.245" y="84.836" smashed="yes"/>
+<element name="BARREL" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="PJ-102A" package3d_urn="urn:adsk.eagle:package:6240341/1" value="2.1MMJACKTHM" x="13.97" y="96.901" smashed="yes"/>
 <element name="U$3" library="local eagle library" package="VALVTEST2" value="" x="1.016" y="58.42" smashed="yes"/>
 <element name="U$6" library="local eagle library" package="VALVTEST2" value="" x="1.016" y="82.55" smashed="yes"/>
 <element name="D4" library="adafruit" library_urn="urn:adsk.eagle:library:420" package="DO41-10" package3d_urn="urn:adsk.eagle:package:6240344/1" value="1N4004" x="13.462" y="40.894" smashed="yes">
@@ -2038,6 +2077,11 @@ design rules under a new name.</description>
 <element name="C4" library="adafruit" package="E2,5-5" value="" x="32.385" y="88.773" smashed="yes" rot="R90">
 <attribute name="NAME" x="31.115" y="91.186" size="1.27" layer="25" ratio="10" rot="R90"/>
 <attribute name="VALUE" x="34.798" y="91.186" size="1.27" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="J2" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" package="POWER_JACK_PTH" package3d_urn="urn:adsk.eagle:package:38231/1" value="POWER_JACK" x="53.34" y="66.04" smashed="yes">
+<attribute name="NAME" x="51.9684" y="67.8688" size="0.6096" layer="25" font="vector" ratio="20"/>
+<attribute name="PROD_ID" value="CONN-08197" x="53.34" y="66.04" size="1.778" layer="27" display="off"/>
+<attribute name="VALUE" x="51.5874" y="66.8528" size="0.6096" layer="27" font="vector" ratio="20"/>
 </element>
 </elements>
 <signals>
@@ -2160,7 +2204,7 @@ design rules under a new name.</description>
 <wire x1="80.4651375" y1="89.3551375" x2="80.518" y2="89.408" width="0.381" layer="1"/>
 <wire x1="32.385" y1="87.503" x2="32.385" y2="85.979" width="0.381" layer="16"/>
 <wire x1="80.264" y1="84.1375" x2="80.4651375" y2="89.3551375" width="0" layer="19" extent="1-16"/>
-<wire x1="55.345" y1="75.546" x2="4.8514" y2="81.6864" width="0" layer="19" extent="1-1"/>
+<wire x1="14.07" y1="87.611" x2="4.8514" y2="81.6864" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$8">
 <contactref element="T1" pad="C"/>
@@ -2262,7 +2306,7 @@ design rules under a new name.</description>
 <contactref element="C4" pad="-"/>
 <wire x1="32.385" y1="90.043" x2="32.385" y2="93.472" width="0.762" layer="16"/>
 <wire x1="91.948" y1="86.36" x2="87.249" y2="93.345" width="0" layer="19" extent="16-16"/>
-<wire x1="55.345" y1="81.446" x2="27.051" y2="93.472" width="0" layer="19" extent="16-16"/>
+<wire x1="14.07" y1="93.511" x2="27.051" y2="93.472" width="0" layer="19" extent="16-16"/>
 </signal>
 <signal name="N$5">
 <contactref element="T2" pad="C"/>
