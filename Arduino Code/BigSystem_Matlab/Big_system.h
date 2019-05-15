@@ -1,6 +1,4 @@
-
-
-#define MEGA_VALVES.h
+#define Big_system.h
 
 #include "Arduino.h"
 #define OPEN 1 
@@ -9,7 +7,7 @@
 //define output pins
 const int invalve[3] = { 53, 52, 51};
 const int ovalve[8] = {49, 48, 47, 46,45,44,43,42};
-const int pump[2]= {6,5}
+const int pump[2]= {6,5};
 const int positivepumppin= 6;
 const int negativepumppin= 5;
 
@@ -29,6 +27,9 @@ bool p_switch;
 int pin;
 int incomingByte;
 unsigned long calltime;
+
+const int numReadings = 30;
+
 int readings[numReadings];      // the readings from the analog input
 int readIndex = 0;              // the index of the current reading
 int total = 0;                  // the running total
@@ -41,6 +42,7 @@ char tempChars[numChars];
 char messageFromPC[numChars] = {0};
 int integerFromPC = 0;
 float floatFromPC = 0.0;
+boolean newData = false;
 
 
 char invalve_read[]="VI";
