@@ -4,12 +4,11 @@
 
 // positive pressure control high/low values. Units are in KPa. Make sure High > Low
 
-int p_low = 23;
-int p_high = 25;
+
 // Negative pressure control high/low values. Units are in KPa. Make sure High < Low, different than positive
 
-int n_low = -55;
-int n_high = -50;
+
+
 
 //this is how hard the pumps work. 0= 0%, 255= 100% The pumps wont turn on if the value is too low.
 int pumppower = 220;
@@ -30,9 +29,9 @@ void setup() {
 
 void loop() {
   int n_pres_sensor = analogRead(A14);
-  int p_pres_sensor = analogRead(A13);
-  int o_pres_sensor = analogRead(A15);
-  pressurecontrol(p_low, p_high, n_low, n_high, n_pres_sensor, p_pres_sensor, o_pres_sensor, pumppower);
+  int p_pres_sensor = analogRead(A15);
+  int o_pres_sensor = analogRead(A13);
+  pressurecontrol(n_pres_sensor, p_pres_sensor, o_pres_sensor, pumppower);
   unsigned long currentMillis = millis();
   recvWithStartEndMarkers();
  if (newData == true) {

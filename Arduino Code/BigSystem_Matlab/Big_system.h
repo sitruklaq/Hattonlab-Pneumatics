@@ -6,7 +6,7 @@
 
 //define output pins
 const int invalve[3] = { 53, 52, 51};
-const int ovalve[8] = {49, 48, 47, 46,45,44,43,42};
+const int ovalve[8] = {41, 40, 39, 38,25,24,23,22};
 const int pump[2]= {6,5};
 const int positivepumppin= 6;
 const int negativepumppin= 5;
@@ -14,8 +14,8 @@ const int negativepumppin= 5;
 int pumpstatus[2]={0,0};
 int invalvestatus[3];
 int ovalvestatus[8];
-
-
+int nsetpoint = 0;
+int psetpoint= 0;
 float p_pressure;
 float n_pressure;
 float o_pressure;
@@ -132,60 +132,65 @@ void setoutvalve(int number, int position) {
 //-------
 
 
-void pressurecontrol(int p_low, int p_high, int n_low, int n_high, int n_input, int p_input, int o_input, int power) {
+void pressurecontrol(int n_input, int p_input, int o_input, int power) {
     
     //sensor math to convert input voltage to pressure in KPa
     
     
     float  o_voltage= map(o_input, 0, 1023, 0, 5000);
     
-    o_pressure= 50*(o_voltage/1000)-130.1;
+    o_pressure= 50*(o_voltage/1000)-125.35;
     
     
     for (int i=0; i < 4; i++) {
         o_pressure_avg = o_pressure_avg + o_pressure;
     }
     o_pressure_avg = o_pressure_avg/5;
-    
-   
-    
-    
    float  n_voltage= map(n_input, 0, 1023, 0, 5000);
+ //   Serial.print("output Pressure is: ");
+ //   Serial.print(o_pressure);
+ //   Serial.print(", ");
     
-   n_pressure= 50*(n_voltage/1000)-130.6;
+   n_pressure= 50*(n_voltage/1000)-125.35;
     
    
     for (int i=0; i < 9; i++) {
         n_pressure_avg = n_pressure_avg + n_pressure;
     }
     n_pressure_avg = n_pressure_avg/10;
-    
+//    Serial.print("Negative Pressure is: ");
+ //   Serial.print(n_pressure);
+ //   Serial.print(", ");
     
    float  p_voltage= map(p_input, 0, 1023, 0, 5000);
     
-   p_pressure= 50*(p_voltage/1000)-130.6;
+   p_pressure= 50*(p_voltage/1000)-124.6;
     
     for (int i=0; i < 9; i++) {
         p_pressure_avg = p_pressure_avg + p_pressure;
     }
     p_pressure_avg = p_pressure_avg/10;
+
+ //   Serial.print("Positive Pressure is: ");
+  //  Serial.print(p_pressure);
+  //  Serial.println(",");
     
     //pressure regulation
-    if(p_pressure_avg<p_low){
+    if(p_pressure_avg<(psetpoint-.5)){
         analogWrite(positivepumppin,power);
 
     }
     
-    if (abs(p_pressure_avg)>p_high){
+    if (abs(p_pressure_avg)>psetpoint){
         
         analogWrite(positivepumppin,0);
     }
     
-    if(n_pressure_avg>n_high){
+    if(n_pressure_avg>(nsetpoint+0.5)){
         analogWrite(negativepumppin,power);
        
     }
-    if (n_pressure_avg<n_low){
+    if (n_pressure_avg<nsetpoint){
        
         analogWrite(negativepumppin,0);
     }
@@ -255,7 +260,17 @@ void recvWithStartEndMarkers() {
 //============
 
 void act_on_input(){
+  Serial.println("code received");
     if (strcmp(messageFromPC,invalve_read)==0){
         setinvalve(integerFromPC, floatFromPC);
+    }
+    if (strcmp(messageFromPC,ovalve_read)==0){
+        setoutvalve(integerFromPC, floatFromPC);
+    }
+    if (strcmp(messageFromPC,nsp)==0){
+        nsetpoint=integerFromPC;
+    }
+    if (strcmp(messageFromPC,psp)==0){
+        psetpoint=integerFromPC;
     }
 }
