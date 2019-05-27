@@ -6,7 +6,8 @@
 
 //define output pins
 const int invalve[3] = { 53, 52, 51};
-const int ovalve[8] = {41, 40, 39, 38,25,24,23,22};
+//const int ovalve[8] = {28, 47, 29, 46,30,45,31,44};
+const int ovalve[8] = {47, 46, 45, 44,31,30,29,28};
 const int pump[2]= {6,5};
 const int positivepumppin= 6;
 const int negativepumppin= 5;
@@ -59,7 +60,7 @@ void initializepins(){
     digitalWrite(invalve[i], LOW);
   }
 
-  for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < 8; i++) {
     pinMode(ovalve[i], OUTPUT);
     digitalWrite(ovalve[i], LOW);
 
@@ -123,11 +124,9 @@ void setoutvalve(int number, int position) {
       if (position == OPEN) {
         digitalWrite(ovalve[number], HIGH);
       }
-
       if (position == CLOSE) {
         digitalWrite(ovalve[number], LOW);
       }
-
 }
 //-------
 
@@ -171,12 +170,12 @@ void pressurecontrol(int n_input, int p_input, int o_input, int power) {
     }
     p_pressure_avg = p_pressure_avg/10;
 
- //   Serial.print("Positive Pressure is: ");
-  //  Serial.print(p_pressure);
-  //  Serial.println(",");
+ // Serial.print("Positive Pressure is: ");
+  //Serial.print(p_pressure);
+  //Serial.println(",");
     
     //pressure regulation
-    if(p_pressure_avg<(psetpoint-.5)){
+    if(p_pressure_avg<(psetpoint-.3)){
         analogWrite(positivepumppin,power);
 
     }
@@ -186,7 +185,7 @@ void pressurecontrol(int n_input, int p_input, int o_input, int power) {
         analogWrite(positivepumppin,0);
     }
     
-    if(n_pressure_avg>(nsetpoint+0.5)){
+    if(n_pressure_avg>(nsetpoint+.3)){
         analogWrite(negativepumppin,power);
        
     }
@@ -258,9 +257,7 @@ void recvWithStartEndMarkers() {
     }
 }
 //============
-
 void act_on_input(){
-  Serial.println("code received");
     if (strcmp(messageFromPC,invalve_read)==0){
         setinvalve(integerFromPC, floatFromPC);
     }
