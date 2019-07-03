@@ -11,7 +11,7 @@
 
 
 //this is how hard the pumps work. 0= 0%, 255= 100% The pumps wont turn on if the value is too low.
-int pumppower = 220;
+int pumppower = 190;
 
 //-----
 

@@ -50,8 +50,11 @@ char invalve_read[]="VI";
 char ovalve_read[]="VO";
 char psp[]="PSP";
 char nsp[]="NSP";
-
-
+char pvp[]="PVP";
+char pvn[]="PVN";
+char pvo[]="PVO";
+char aov[]="AOV";
+char aiv[]="AIV";
 
 //----ARDUINO INITIALIZATION
 void initializepins(){
@@ -105,13 +108,13 @@ void initializepins(){
 //---THIS FUNCTION TURNS ON/OFF ALL OUTPUT VALVES
 void setalloutvalves(int position) {
       if (position == OPEN) {
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 8; i++) {
           digitalWrite(ovalve[i], HIGH);
         }
       }
 
       if (position == CLOSE) {
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 8; i++) {
           digitalWrite(ovalve[i], LOW);
         }
       }
@@ -137,42 +140,31 @@ void pressurecontrol(int n_input, int p_input, int o_input, int power) {
     
     
     float  o_voltage= map(o_input, 0, 1023, 0, 5000);
+    float  n_voltage= map(n_input, 0, 1023, 0, 5000);
+    float  p_voltage= map(p_input, 0, 1023, 0, 5000);
+    o_pressure= 50*(o_voltage/1000)-123.65;
+    n_pressure= 50*(n_voltage/1000)-125.1;
+    p_pressure= 50*(p_voltage/1000)-124.85;
     
-    o_pressure= 50*(o_voltage/1000)-125.35;
-    
-    
-    for (int i=0; i < 4; i++) {
-        o_pressure_avg = o_pressure_avg + o_pressure;
-    }
-    o_pressure_avg = o_pressure_avg/5;
-   float  n_voltage= map(n_input, 0, 1023, 0, 5000);
- //   Serial.print("output Pressure is: ");
- //   Serial.print(o_pressure);
- //   Serial.print(", ");
-    
-   n_pressure= 50*(n_voltage/1000)-125.35;
-    
-   
-    for (int i=0; i < 9; i++) {
-        n_pressure_avg = n_pressure_avg + n_pressure;
-    }
-    n_pressure_avg = n_pressure_avg/10;
-//    Serial.print("Negative Pressure is: ");
- //   Serial.print(n_pressure);
- //   Serial.print(", ");
-    
-   float  p_voltage= map(p_input, 0, 1023, 0, 5000);
-    
-   p_pressure= 50*(p_voltage/1000)-124.6;
-    
-    for (int i=0; i < 9; i++) {
+    for (int i=0; i < 99; i++) {
         p_pressure_avg = p_pressure_avg + p_pressure;
+        n_pressure_avg = n_pressure_avg + n_pressure;
+       o_pressure_avg = o_pressure_avg + o_pressure;
     }
-    p_pressure_avg = p_pressure_avg/10;
+    
+    p_pressure_avg = p_pressure_avg/100;
+    n_pressure_avg = n_pressure_avg/100;
+    o_pressure_avg = o_pressure_avg/100;
 
+  
  // Serial.print("Positive Pressure is: ");
-  //Serial.print(p_pressure);
-  //Serial.println(",");
+  // Serial.print(p_pressure_avg);
+ // Serial.print(", Negative Pressure is: ");
+ // Serial.println(n_pressure_avg);
+ // Serial.println(",");
+// Serial.print("Output Pressure is: ");
+//Serial.println(o_pressure_avg);
+
     
     //pressure regulation
     if(p_pressure_avg<(psetpoint-.3)){
@@ -269,5 +261,21 @@ void act_on_input(){
     }
     if (strcmp(messageFromPC,psp)==0){
         psetpoint=integerFromPC;
+    }
+    if (strcmp(messageFromPC,pvp)==0){
+      Serial.println(p_pressure_avg);
+    }
+    if (strcmp(messageFromPC,pvn)==0){
+      Serial.println(n_pressure_avg);
+    }
+    
+    if (strcmp(messageFromPC,pvo)==0){
+      Serial.println(o_pressure_avg);
+    }
+    if (strcmp(messageFromPC,aov)==0){
+        setalloutvalves(integerFromPC);
+    }
+    if (strcmp(messageFromPC,aiv)==0){
+        setallinvalves(integerFromPC);
     }
 }
