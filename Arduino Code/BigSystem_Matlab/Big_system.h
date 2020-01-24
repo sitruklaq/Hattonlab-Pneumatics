@@ -6,7 +6,7 @@
 
 //define output pins
 const int invalve[3] = { 53, 52, 51};
-//const int ovalve[8] = {28, 47, 29, 46,30,45,31,44};
+//const int ovalve[8] = {28, 47, 29, 46,30,45,31,44}; //this pin arrangement is for the 8-channel device only
 const int ovalve[8] = {47, 46, 45, 44,31,30,29,28};
 const int pump[2]= {6,5};
 const int positivepumppin= 6;
