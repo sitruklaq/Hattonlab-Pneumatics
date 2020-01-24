@@ -30,8 +30,12 @@ void setup() {
 void loop() {
   int n_pres_sensor = analogRead(A14);
   int p_pres_sensor = analogRead(A15);
-  int o_pres_sensor = analogRead(A13);
-  pressurecontrol(n_pres_sensor, p_pres_sensor, o_pres_sensor, pumppower);
+  int o_pres_sensor1 = analogRead(A13);
+  int o_pres_sensor2=analogRead(A12);
+  int o_pres_sensor3=analogRead(A11);
+int o_pres_sensor4=analogRead(A10);
+int o_pres_sensor5=analogRead(A9);
+  pressurecontrol(n_pres_sensor, p_pres_sensor, o_pres_sensor1,o_pres_sensor2,o_pres_sensor3,o_pres_sensor4,o_pres_sensor5,pumppower);
   unsigned long currentMillis = millis();
   recvWithStartEndMarkers();
  if (newData == true) {

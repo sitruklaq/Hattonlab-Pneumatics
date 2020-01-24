@@ -19,10 +19,18 @@ int nsetpoint = 0;
 int psetpoint= 0;
 float p_pressure;
 float n_pressure;
-float o_pressure;
+float o1_pressure;
+float o2_pressure;
+float o3_pressure;
+float o4_pressure;
+float o5_pressure;
 float p_pressure_avg = 0;
 float n_pressure_avg = 0;
-float o_pressure_avg = 0;
+float o1_pressure_avg = 0;
+float o2_pressure_avg = 0;
+float o3_pressure_avg = 0;
+float o4_pressure_avg = 0;
+float o5_pressure_avg = 0;
 int dly = 25;
 bool p_switch;
 int pin;
@@ -55,6 +63,7 @@ char pvn[]="PVN";
 char pvo[]="PVO";
 char aov[]="AOV";
 char aiv[]="AIV";
+char pvt[]="PVT";
 
 //----ARDUINO INITIALIZATION
 void initializepins(){
@@ -134,27 +143,42 @@ void setoutvalve(int number, int position) {
 //-------
 
 
-void pressurecontrol(int n_input, int p_input, int o_input, int power) {
+void pressurecontrol(int n_input, int p_input, int o1_input,int o2_input,int o3_input,int o4_input,int o5_input, int power) {
     
     //sensor math to convert input voltage to pressure in KPa
-    
-    
-    float  o_voltage= map(o_input, 0, 1023, 0, 5000);
+    float  o1_voltage= map(o1_input, 0, 1023, 0, 5000);
+    float  o2_voltage= map(o2_input, 0, 1023, 0, 5000);
+    float  o3_voltage= map(o3_input, 0, 1023, 0, 5000);
+    float  o4_voltage= map(o4_input, 0, 1023, 0, 5000);
+    float  o5_voltage= map(o5_input, 0, 1023, 0, 5000);
     float  n_voltage= map(n_input, 0, 1023, 0, 5000);
     float  p_voltage= map(p_input, 0, 1023, 0, 5000);
-    o_pressure= 50*(o_voltage/1000)-123.65;
+    
     n_pressure= 50*(n_voltage/1000)-125.1;
     p_pressure= 50*(p_voltage/1000)-124.85;
+   o1_pressure= 50*(o1_voltage/1000)-124.6;
+   o2_pressure= 50*(o2_voltage/1000)-125.35;
+   o3_pressure= 50*(o3_voltage/1000)-124.1;
+   o4_pressure= 50*(o4_voltage/1000)-124.85;
+   o5_pressure= 50*(o5_voltage/1000)-125.35;
     
     for (int i=0; i < 99; i++) {
         p_pressure_avg = p_pressure_avg + p_pressure;
         n_pressure_avg = n_pressure_avg + n_pressure;
-       o_pressure_avg = o_pressure_avg + o_pressure;
+       o1_pressure_avg = o1_pressure_avg + o1_pressure;
+       o2_pressure_avg = o2_pressure_avg + o2_pressure;
+       o3_pressure_avg = o3_pressure_avg + o3_pressure;
+       o4_pressure_avg = o4_pressure_avg + o4_pressure;
+       o5_pressure_avg = o5_pressure_avg + o5_pressure;
     }
     
     p_pressure_avg = p_pressure_avg/100;
     n_pressure_avg = n_pressure_avg/100;
-    o_pressure_avg = o_pressure_avg/100;
+    o1_pressure_avg = o1_pressure_avg/100;
+    o2_pressure_avg = o2_pressure_avg/100;
+    o3_pressure_avg = o3_pressure_avg/100;
+    o4_pressure_avg = o4_pressure_avg/100;
+    o5_pressure_avg = o5_pressure_avg/100;
 
   
  // Serial.print("Positive Pressure is: ");
@@ -162,9 +186,16 @@ void pressurecontrol(int n_input, int p_input, int o_input, int power) {
  // Serial.print(", Negative Pressure is: ");
  // Serial.println(n_pressure_avg);
  // Serial.println(",");
-// Serial.print("Output Pressure is: ");
-//Serial.println(o_pressure_avg);
-
+//Serial.print("Output Pressures: ");
+//Serial.print(o1_pressure_avg);
+//Serial.print(", ");
+//Serial.print(o2_pressure_avg);
+//Serial.print(", ");
+//Serial.print(o3_pressure_avg);
+//Serial.print(", ");
+//Serial.print(o4_pressure_avg);
+//Serial.print(", ");
+//Serial.println(o5_pressure_avg);
     
     //pressure regulation
     if(p_pressure_avg<(psetpoint-.3)){
@@ -270,7 +301,24 @@ void act_on_input(){
     }
     
     if (strcmp(messageFromPC,pvo)==0){
-      Serial.println(o_pressure_avg);
+      if (integerFromPC==1){
+        Serial.println(o1_pressure_avg);
+      }
+      if (integerFromPC==2){
+        Serial.println(o2_pressure_avg);
+      }
+      if (integerFromPC==3){
+        Serial.println(o3_pressure_avg);
+      }
+      if (integerFromPC==4){
+        Serial.println(o4_pressure_avg);
+      }
+      if (integerFromPC==5){
+        Serial.println(o5_pressure_avg);
+      } 
+    }
+    if (strcmp(messageFromPC,pvt)==0){
+      Serial.println(o2_pressure_avg);
     }
     if (strcmp(messageFromPC,aov)==0){
         setalloutvalves(integerFromPC);
