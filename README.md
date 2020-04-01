@@ -5,7 +5,7 @@ Herein is described the pneumatic control system used in the HATTONLAB to contro
 This system is designed to control multi-channel pneumatic smart surfaces using only small amounts of air. The pneumatic system consists of 8 independent pneumatic channels that can access positive, negative, and neutral (exhaust) states. 
 
 
-![image of setup](Images/Jan%2021%202020/bigpneumatics.png)
+![image of setup](Images/Jan_21_2020/bigpneumatics.png)
 
 # Pneumatic Logic
 
@@ -21,7 +21,7 @@ on the inlet side, there are three valves that control inlet flow.
 
 On the outlet side, valves can be turned on to pressurize the channels.There are currently 8 output valves.
 
-![image of logic](Images/Jan%2021%202020/pressuresetup.png)
+![image of logic](Images/Jan_21_2020/pressuresetup.png)
 
 # Control
 
