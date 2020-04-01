@@ -1,4 +1,8 @@
-# Graphical User Interface
+# Things to Add
 
+- [ ] Add pump pressure value gauges
+- [ ] add pump power gauge
+- [ ] add fluctuate quick action
+- [ ] mimic valve positions to real device
+- [ ] real-time update of toggle switches if quick actions are pressed
 
-![GUI Picture](https://github.com/sitruklaq/Pneumatics/blob/master/Visual%20Control%20System/Pneumatics%20App%20Jan%2024.png)

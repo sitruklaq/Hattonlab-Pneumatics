@@ -1,33 +1,33 @@
-# Pneumatics
-Herein is described the pneumatic control system used in the HATTONLAB to control pneumatic smart surfaces.
 
-# Overview
-This system is designed to control multi-channel pneumatic smart surfaces using only small amounts of air. The pneumatic system consists of 8 independent pneumatic channels that can access positive, negative, and neutral (exhaust) states. 
 
+# 1. Overview
+This system is designed to control multi-channel pneumatic smart surfaces using only small amounts of air. The pneumatic system consists of 8 independent pneumatic channels that can access positive, negative, and neutral (exhaust) states. For a smaller, portable setup, please refer to this respository.
 
 ![image of setup](Images/Jan_21_2020/bigpneumatics.png)
 
-# Pneumatic Logic
+<img src="Images/2020_08_19/topView.png" alt="topView" style="zoom:10%;" /> <img src="Images/2020_08_19/backView.png" alt="backView" style="zoom:10%;" />
 
-The Pneumatic logic is as follows:
+## 1.1 Table of Contents
 
-Two pumps (one for positive and one for negative pressure) pressurize two resevoirs. 
+[TOC]
 
-Valves
-on the inlet side, there are three valves that control inlet flow.
-1 to allow positive pressure
-1 to allow negative pressure
-1 to exhuast
+# 2. Components & Pneumatic Logic
 
-On the outlet side, valves can be turned on to pressurize the channels.There are currently 8 output valves.
+The instrument is designed to provide 3 pressure 'input' states: positive (+∆P), negative, (-∆P), and neutral (0∆P). Postive and negative pressures are generated through pneumatic pumps and held in reservoirs. The pressure for each reservoir is defined by the user and monitored through in-line pressure sensors. Pneumatic valves can be toggled to open and enter a common pressure line which can be accessed by independent valves that lead to channels (N=8). 
+
+The valves are rated for +-100kPa while the pumps are generally able to reach ~+-60kPa. Valve response time is <5ms.
 
 ![image of logic](Images/Jan_21_2020/pressuresetup.png)
 
-# Control
+# 3. Instrument Control
 
-The Arduino microncontroller is responsible for opening and closing the pneumatic valves in addition to regulating pressure setpoints of the reservoirs. 
+An Arduino microncontroller is responsible for opening and closing the pneumatic valves in addition to regulating pressure setpoints of the reservoirs. 
 
-Setpoint control is currently only simple state monitoring. The pumps will turn on if the reservoirs are underpressurized below a threshold. For example, if the setpoint is +5kPa, the pump will turn on if < 4.7kPa... (a 0.3kPa threshold).
+
+
+This instrument is controlled through a Serial Connection to a computer. 
+
+
 
 Communication to the microcontroller is accomplished through serial communication. Commands for valve control, setpoint, and pressure value requests are available in the X section.
 
@@ -35,15 +35,11 @@ A MATLAB GUI app uses these commands to visually control the pneumatics.
 
 screenshot to be added later.
 
-# Serial Command List
-
-## How to send a command through serial
+## 3.1 Serial Command List
 
 The Arduino is listening for serial commands in the following structure ‘< command, optional modifier, optional modifier>’.
 
-## Command List
-
-### Valve Control
+### 3.1.1 Valve Control
 
 | Command Syntax | Description                                                  | Example                                 |
 | :------------: | ------------------------------------------------------------ | --------------------------------------- |
@@ -52,7 +48,7 @@ The Arduino is listening for serial commands in the following structure ‘< com
 |    **AIV**     | **ALL INPUT VALVES** Changes the state of all input valves <command, 0/1> | <AIV,1> opens all input valves          |
 |    **AOV**     | **ALL OUTPUT VALVES** Changes the state of all outpu valves <command, 0/1> | <AOV, 0> turns off all output valves    |
 
-### Reservoir Setpoints
+### 3.1.2 Reservoir Setpoints
 
 | Command Syntax | Description                                                  | Example    |
 | :------------: | ------------------------------------------------------------ | ---------- |
@@ -62,7 +58,7 @@ The Arduino is listening for serial commands in the following structure ‘< com
 |    **PVO**     | **PRESSURE VALUE OUTPUT** prints the pressure value of an output pressure channel | <PVO, 3>   |
 |    **PVP**     | **PRESSURE VALUE POSITIVE** prints the pressure value of the positive pressure reservoir | <PVP>      |
 
-### Pressure Readings
+### 3.1.3 Pressure Readings
 
 | Command Syntax | Description                                                  | Example  |
 | :------------: | ------------------------------------------------------------ | :------: |
@@ -70,12 +66,52 @@ The Arduino is listening for serial commands in the following structure ‘< com
 |      PVN       | **PRESSURE VALUE NEGATIVE** prints the pressure value of the negative pressure reservoir |  <PVN>   |
 |      PVO       | **PRESSURE VALUE OUTPUT** prints the pressure value of an output pressure channel | <PVO, 3> |
 
-## Visual Control App
+# 4. Visual Control App
 
 A visual control app was designed using Matlab App Designer. The app is basic in functionality but is able to control valves through sending serial commands. 
 
 ![VCA](Visual_Control_System/Pneumatics_App_Jan_24.png)
 
+# 5. Setpoint Pressure Control
+
+Reservoir pressure is controlled by simple state monitoring. The pressure sensors monitor the pressure and the pump is turned on if the pressure drops below the Setpoint (with a small threshold).
+
+# 6. Electrical Circuitry
+
+## 6.1 Electrical Components
+
+Power is supplied by an off board 12V 5A brick-style switching power supply. The 12V power is then split and one side is stepped down to 5V. The valves run on the 5V rail and are toggled through npn transistors powered by an Arduino.
+
+**12V**
+
+- Pumps
+- Motor Controller
+
+**5V**
+
+- Valves
+
+**5V (Computer-> Arduino)**
+
+- pressure sensors
+- transistors
+- leds
+
+## 6.2 PCBs
+
+### 6.2.2 Input Valve PCB
+
+<img src="/Users/kurtislaqua/Documents/GitHub/Pneumatics/Images/3_valve_pcb.png" alt="3 valve pcb" style="zoom:50%;" />
+
+### 6.2.3 Output Valve PCB
+
+<img src="/Users/kurtislaqua/Documents/GitHub/Pneumatics/Images/4_valve_pcb.png" alt="4 valve pcb" style="zoom:50%;" />
+
+
+
+### 6.2.4 2 Sensor Board
+
+![sensor board](/Users/kurtislaqua/Documents/GitHub/Pneumatics/Images/sensor_board_image.png)
 
 
 
