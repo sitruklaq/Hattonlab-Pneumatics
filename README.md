@@ -74,7 +74,7 @@ The Arduino is listening for serial commands in the following structure ‘< com
 
 A visual control app was designed using Matlab App Designer. The app is basic in functionality but is able to control valves through sending serial commands. 
 
-![VCA](Visual Control System/Pneumatics App Jan 24.png)
+![VCA](Visual_Control_System/Pneumatics_App_Jan_24.png)
 
 
 
