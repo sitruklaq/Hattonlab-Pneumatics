@@ -8,9 +8,23 @@ This system is designed to control multi-channel pneumatic smart surfaces using 
 <img src="Images/2020_08_19/topView.png" alt="topView" style="zoom:10%;" /> <img src="Images/2020_08_19/backView.png" alt="backView" style="zoom:10%;" />
 
 ## 1.1 Table of Contents
-
+* [1\. Overview](#1-overview)
+  * [1\.1 Table of Contents](#11-table-of-contents)
+* [2\. Components &amp; Pneumatic Logic](#2-components--pneumatic-logic)
+* [3\. Instrument Control](#3-instrument-control)
+  * [3\.1 Serial Command List](#31-serial-command-list)
+    * [3\.1\.1 Valve Control](#311-valve-control)
+    * [3\.1\.2 Reservoir Setpoints](#312-reservoir-setpoints)
+    * [3\.1\.3 Pressure Readings](#313-pressure-readings)
+* [4\. Visual Control App](#4-visual-control-app)
+* [5\. Setpoint Pressure Control](#5-setpoint-pressure-control)
+* [6\. Electrical Circuitry](#6-electrical-circuitry)
+  * [6\.1 Electrical Components](#61-electrical-components)
+  * [6\.2 PCBs](#62-pcbs)
+    * [6\.2\.2 Input Valve PCB](#622-input-valve-pcb)
+    * [6\.2\.3 Output Valve PCB](#623-output-valve-pcb)
+    * [6\.2\.4 2 Sensor Board](#624-2-sensor-board)
 [TOC]
-
 # 2. Components & Pneumatic Logic
 
 The instrument is designed to provide 3 pressure 'input' states: positive (+∆P), negative, (-∆P), and neutral (0∆P). Postive and negative pressures are generated through pneumatic pumps and held in reservoirs. The pressure for each reservoir is defined by the user and monitored through in-line pressure sensors. Pneumatic valves can be toggled to open and enter a common pressure line which can be accessed by independent valves that lead to channels (N=8). 
