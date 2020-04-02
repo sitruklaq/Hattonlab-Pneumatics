@@ -115,17 +115,17 @@ Power is supplied by an off board 12V 5A brick-style switching power supply. The
 
 ### 6.2.2 Input Valve PCB
 
-<img src="/Users/kurtislaqua/Documents/GitHub/Pneumatics/Images/3_valve_pcb.png" alt="3 valve pcb" style="zoom:50%;" />
+<img src="/Images/3_valve_pcb.png" alt="3 valve pcb" style="zoom:50%;" />
 
 ### 6.2.3 Output Valve PCB
 
-<img src="/Users/kurtislaqua/Documents/GitHub/Pneumatics/Images/4_valve_pcb.png" alt="4 valve pcb" style="zoom:50%;" />
+<img src="/Images/4_valve_pcb.png" alt="4 valve pcb" style="zoom:50%;" />
 
 
 
 ### 6.2.4 2 Sensor Board
 
-![sensor board](/Users/kurtislaqua/Documents/GitHub/Pneumatics/Images/sensor_board_image.png)
+![sensor board](/Images/sensor_board_image.png)
 
 
 
