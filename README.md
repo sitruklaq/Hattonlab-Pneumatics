@@ -1,7 +1,7 @@
 
 
 # 1. Overview
-This system is designed to control multi-channel pneumatic smart surfaces using only small amounts of air. The pneumatic system consists of 8 independent pneumatic channels that can access positive, negative, and neutral (exhaust) states. For a smaller, portable setup, please refer to this respository.
+This system is designed to control multi-channel pneumatic smart surfaces using only small amounts of air. The pneumatic system consists of 8 independent pneumatic channels that can access positive, negative, and neutral (exhaust) states. For a smaller, portable setup, please refer to this respository: https://github.com/sitruklaq/Mini-Pneumatics
 
 ![image of setup](Images/Jan_21_2020/bigpneumatics.png)
 
